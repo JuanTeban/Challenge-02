@@ -1,8 +1,10 @@
 # Challenge 02 — El Desafío de los Datos Erróneos e Interconectados
 
 Integrantes:
-Juan Esteban Garcia - 
+Juan Esteban Garcia - 1020222158
+
 Manuela Castaño - 1011510403
+
 Juan Felipe Restrepo - 
 
 Sistema de Soporte a la Decisión (DSS) para **TechLogistics S.A.S.**, un retailer tecnológico
