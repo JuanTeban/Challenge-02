@@ -1,5 +1,12 @@
 # Challenge 02 — El Desafío de los Datos Erróneos e Interconectados
 
+Integrantes:
+Juan Esteban Garcia - 1020222158
+
+Manuela Castaño - 1011510403
+
+Juan Felipe Restrepo - 
+
 Sistema de Soporte a la Decisión (DSS) para **TechLogistics S.A.S.**, un retailer tecnológico
 ficticio que sospecha que la erosión de su margen y la caída en la lealtad de sus clientes
 viene de la desconexión entre sus tres sistemas: Inventario, Logística y Feedback de Clientes.
@@ -100,3 +107,10 @@ en la sección **"Ver registros excluidos"** de la pestaña Auditoría para no p
 ## Stack técnico
 
 Python 3.13 · pandas · numpy · scipy (pruebas de correlación) · Plotly · Streamlit · Groq SDK.
+
+
+
+
+## LINK STREAMLIT
+
+https://challenge-02.streamlit.app/
