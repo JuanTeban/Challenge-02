@@ -1,0 +1,129 @@
+{
+  "antes": {
+    "inventario": {
+      "dataset": "Inventario",
+      "n_filas": 2500,
+      "nulidad_por_columna_%": {
+        "SKU_ID": 0.0,
+        "Categoria": 0.0,
+        "Stock_Actual": 4.0,
+        "Costo_Unitario_USD": 0.0,
+        "Punto_Reorden": 0.0,
+        "Lead_Time_Dias": 16.12,
+        "Bodega_Origen": 0.0,
+        "Ultima_Revision": 0.0
+      },
+      "pct_nulidad_promedio": 2.52,
+      "duplicados_exactos": 0,
+      "pct_duplicados": 0.0,
+      "health_score": 97.48
+    },
+    "transacciones": {
+      "dataset": "Transacciones",
+      "n_filas": 10000,
+      "nulidad_por_columna_%": {
+        "Transaccion_ID": 0.0,
+        "SKU_ID": 0.0,
+        "Fecha_Venta": 0.0,
+        "Cantidad_Vendida": 0.0,
+        "Precio_Venta_Final": 0.0,
+        "Costo_Envio": 8.34,
+        "Tiempo_Entrega_Real": 0.0,
+        "Estado_Envio": 16.83,
+        "Ciudad_Destino": 0.0,
+        "Canal_Venta": 0.0
+      },
+      "pct_nulidad_promedio": 2.52,
+      "duplicados_exactos": 0,
+      "pct_duplicados": 0.0,
+      "health_score": 97.48
+    },
+    "feedback": {
+      "dataset": "Feedback",
+      "n_filas": 4500,
+      "nulidad_por_columna_%": {
+        "Feedback_ID": 0.0,
+        "Transaccion_ID": 0.0,
+        "Rating_Producto": 0.0,
+        "Rating_Logistica": 0.0,
+        "Comentario_Texto": 14.6,
+        "Recomienda_Marca": 24.87,
+        "Ticket_Soporte_Abierto": 0.0,
+        "Edad_Cliente": 0.0,
+        "Satisfaccion_NPS": 0.0
+      },
+      "pct_nulidad_promedio": 4.39,
+      "duplicados_exactos": 0,
+      "pct_duplicados": 0.0,
+      "health_score": 95.61
+    }
+  },
+  "despues": {
+    "inventario": {
+      "dataset": "Inventario",
+      "n_filas": 2500,
+      "nulidad_por_columna_%": {
+        "SKU_ID": 0.0,
+        "Categoria": 0.0,
+        "Stock_Actual": 0.0,
+        "Costo_Unitario_USD": 0.0,
+        "Punto_Reorden": 0.0,
+        "Lead_Time_Dias": 0.0,
+        "Bodega_Origen": 0.0,
+        "Ultima_Revision": 0.0,
+        "Bodega_Externa": 0.0,
+        "Stock_Imputado": 0.0,
+        "Outlier_Costo": 0.0,
+        "Dias_Desde_Revision": 0.0
+      },
+      "pct_nulidad_promedio": 0.0,
+      "duplicados_exactos": 0,
+      "pct_duplicados": 0.0,
+      "health_score": 100.0
+    },
+    "transacciones": {
+      "dataset": "Transacciones",
+      "n_filas": 10000,
+      "nulidad_por_columna_%": {
+        "Transaccion_ID": 0.0,
+        "SKU_ID": 0.0,
+        "Fecha_Venta": 0.0,
+        "Cantidad_Vendida": 0.0,
+        "Precio_Venta_Final": 0.0,
+        "Costo_Envio": 0.0,
+        "Tiempo_Entrega_Real": 0.0,
+        "Estado_Envio": 0.0,
+        "Ciudad_Destino": 0.0,
+        "Canal_Venta": 0.0,
+        "Es_SKU_Fantasma": 0.0,
+        "Posible_Devolucion": 0.0,
+        "Outlier_Entrega": 0.0,
+        "Ciudad_Valida": 0.0
+      },
+      "pct_nulidad_promedio": 0.0,
+      "duplicados_exactos": 0,
+      "pct_duplicados": 0.0,
+      "health_score": 100.0
+    },
+    "feedback": {
+      "dataset": "Feedback",
+      "n_filas": 4500,
+      "nulidad_por_columna_%": {
+        "Feedback_ID": 0.0,
+        "Transaccion_ID": 0.0,
+        "Rating_Producto": 0.0,
+        "Rating_Logistica": 0.0,
+        "Comentario_Texto": 0.0,
+        "Recomienda_Marca": 0.0,
+        "Ticket_Soporte_Abierto": 0.0,
+        "Edad_Cliente": 0.0,
+        "Satisfaccion_NPS": 0.0,
+        "ID_Reasignado": 0.0
+      },
+      "pct_nulidad_promedio": 0.0,
+      "duplicados_exactos": 0,
+      "pct_duplicados": 0.0,
+      "health_score": 100.0
+    }
+  }
+}

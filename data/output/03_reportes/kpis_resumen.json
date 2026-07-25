@@ -1,0 +1,34 @@
+{
+  "margen_negativo": {
+    "total_transacciones_con_margen": 8244,
+    "transacciones_margen_negativo": 3188,
+    "pct_transacciones_margen_negativo": 38.67,
+    "perdida_total_usd": -11292631.9,
+    "transacciones_excluidas_outlier_costo": 5,
+    "impacto_excluido_usd": -23768848.93
+  },
+  "venta_fantasma": {
+    "ingreso_total_usd": 74087519.58,
+    "ingreso_en_riesgo_usd": 12866162.44,
+    "pct_ingreso_en_riesgo": 17.37,
+    "transacciones_fantasma": 1751,
+    "pct_transacciones_fantasma": 17.51
+  },
+  "paradoja_fidelidad": {
+    "categorias_en_paradoja": [
+      "Sin Categoría",
+      "Smartphones"
+    ],
+    "diagnosticos": {
+      "Sin Categoría": "Sobrecosto percibido",
+      "Smartphones": "Sin señal clara en margen ni calificación (investigar caso a caso)"
+    }
+  },
+  "riesgo_operativo": {
+    "correlacion_antiguedad_tickets": 0.004,
+    "p_valor": 0.7365,
+    "bodegas_operando_a_ciegas": [
+      "Occidente"
+    ]
+  }
+}
