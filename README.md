@@ -100,3 +100,10 @@ en la sección **"Ver registros excluidos"** de la pestaña Auditoría para no p
 ## Stack técnico
 
 Python 3.13 · pandas · numpy · scipy (pruebas de correlación) · Plotly · Streamlit · Groq SDK.
+
+
+
+
+## LINK STREAMLIT
+
+https://challenge-02.streamlit.app/
