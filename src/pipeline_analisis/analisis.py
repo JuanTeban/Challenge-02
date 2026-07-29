@@ -176,12 +176,25 @@ def analizar_riesgo_operativo(df: pd.DataFrame) -> dict:
         base["Dias_Desde_Revision"], bins=bins, labels=etiquetas
     )
 
-    por_bodega = base.groupby("Bodega_Origen").agg(
-        Dias_Desde_Revision_Promedio=("Dias_Desde_Revision", "mean"),
-        Ratio_Soporte=("Ticket_Soporte_Abierto", "mean"),
-        NPS_Promedio=("Satisfaccion_NPS", "mean"),
-        Total_Transacciones=("Transaccion_ID", "count"),
-    ).reset_index().sort_values("Dias_Desde_Revision_Promedio", ascending=False)
+    por_bodega = (
+        base.groupby("Bodega_Origen")
+        .agg(
+            Dias_Desde_Revision_Promedio=("Dias_Desde_Revision", "mean"),
+            Ratio_Soporte=("Ticket_Soporte_Abierto", "mean"),
+            NPS_Promedio=("Satisfaccion_NPS", "mean"),
+            Total_Transacciones=("Transaccion_ID", "count"),
+        )
+        .reset_index()
+    )
+
+    # Se calcula la mediana para dividir cada bodega en Alta/Baja
+    mediana_revision = por_bodega["Dias_Desde_Revision_Promedio"].median()
+
+    por_bodega["Nivel_Antiguedad"] = np.where(
+        por_bodega["Dias_Desde_Revision_Promedio"] >= mediana_revision,
+        "Alta antigüedad",
+        "Baja antigüedad",
+    )
 
     por_rango = base.groupby("Rango_Antiguedad_Revision", observed=True).agg(
         Ratio_Soporte=("Ticket_Soporte_Abierto", "mean"),
@@ -206,10 +219,13 @@ def analizar_riesgo_operativo(df: pd.DataFrame) -> dict:
 
     return {
         "resumen": {
-            "correlacion_antiguedad_tickets": round(float(r), 3) if pd.notna(r) else None,
+            "correlacion_antiguedad_tickets": round(float(r), 3)
+            if pd.notna(r)
+            else None,
             "p_valor": round(float(p), 4) if pd.notna(p) else None,
             "bodegas_operando_a_ciegas": bodegas_a_ciegas,
         },
         "por_bodega": por_bodega,
         "por_rango_antiguedad": por_rango,
+        "mediana_antiguedad": mediana_revision,
     }

@@ -604,31 +604,49 @@ with tab_cliente:
 
     st.divider()
     encabezado_seccion("5. Storytelling de Riesgo Operativo")
-    col_r1, col_r2 = st.columns(2)
+    col_r1 = st.columns(1)[0]
     with col_r1:
-        fig_dias = px.bar(
-            resultado_riesgo["por_bodega"],
-            x="Bodega_Origen",
-            y="Dias_Desde_Revision_Promedio",
-            color="Bodega_Origen",
-            color_discrete_map=paleta.BODEGA_COLORES,
-            title="Antigüedad Promedio de la Última Revisión por Bodega",
-        )
-        fig_dias.update_traces(showlegend=False)
-        fig_dias.update_layout(bargap=0.35)
-        st.plotly_chart(fig_dias, use_container_width=True)
-    with col_r2:
-        fig_ratio = px.bar(
-            resultado_riesgo["por_bodega"],
-            x="Bodega_Origen",
+        datos = resultado_riesgo["por_bodega"].copy()
+
+        fig = px.scatter(
+            datos,
+            x="Dias_Desde_Revision_Promedio",
             y="Ratio_Soporte",
-            color="Bodega_Origen",
-            color_discrete_map=paleta.BODEGA_COLORES,
-            title="Tasa de Tickets de Soporte por Bodega",
+            color="Nivel_Antiguedad",
+            text="Bodega_Origen",
+            size="Total_Transacciones",
+            hover_data={
+                "Dias_Desde_Revision_Promedio": ":.0f",
+                "Ratio_Soporte": ":.2%",
+                "NPS_Promedio": ":.2f",
+                "Total_Transacciones": True,
+            },
         )
-        fig_ratio.update_traces(showlegend=False)
-        fig_ratio.update_layout(bargap=0.35)
-        st.plotly_chart(fig_ratio, use_container_width=True)
+
+        fig.update_traces(textposition="top center")
+
+        # Línea vertical (mediana)
+        fig.add_vline(
+            x=resultado_riesgo["mediana_antiguedad"],
+            line_dash="dash",
+            line_color="gray",
+        )
+
+        # Línea horizontal (mediana)
+        fig.add_hline(
+            y=datos["Ratio_Soporte"].median(),
+            line_dash="dash",
+            line_color="gray",
+        )
+
+        fig.update_layout(
+            title="Antigüedad de revisión vs tasa de tickets por bodega",
+            xaxis_title="Días desde la última revisión",
+            yaxis_title="Tasa de tickets de soporte",
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
     if resumen_r["bodegas_operando_a_ciegas"]:
         st.warning(
             f"Bodegas 'operando a ciegas' (revisión desactualizada + alta tasa de tickets): "
