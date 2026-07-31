@@ -54,14 +54,7 @@ usa ese reporte para su Módulo de Transparencia y para el `reporte_limpieza.md`
 
 ## Instalación
 
-El repositorio ya incluye un entorno virtual (`.venv`). Actívalo e instala las dependencias:
-
-```bash
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Si prefieres crear el entorno desde cero:
+Para crear un entorno virtual, se debe seguir el siguiente comando:
 
 ```bash
 python -m venv .venv
